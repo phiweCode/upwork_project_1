@@ -1,0 +1,3 @@
+"use strict";
+
+console.log("This file is no longer needed in your store. You may remove it from your store by following this path: Themes > Actions > Edit code > Layout > theme.liquid\n\nSearch for: https://cdn.starapps.studio/apps/vsk/cbd-certified-com/script-1634758291.js");

@@ -1,0 +1,79 @@
+var jquery_url = 'https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js';
+var hc_load_jquery = function (url, success){
+  var script = document.createElement('script');
+  script.src = url;
+  var head = document.getElementsByTagName('head')[0],
+          done = false;
+  head.appendChild(script);
+  script.onload = script.onreadystatechange = function()
+  {
+    if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete'))
+    {
+      done = true;
+      success();
+      script.onload = script.onreadystatechange = null;
+      head.removeChild(script);
+    }
+  };
+};
+
+var hc_fetch_resources = function (){
+  jQuery.get('https://app.helpfulcrowd.com/res/shopify/eYSBR0.json',
+  function (data){
+    if (data){
+      var available_widgets = [];
+      jQuery.each(data.widgets, function(key, value) {
+        if (value) {
+          available_widgets.push(key);
+        }
+      })
+      hc_initialize_widgets(data, available_widgets)
+      if (jQuery('head link[type="text/css"][rel="stylesheet"][href="' + data.css.url + '"]').length <= 0)
+        jQuery('head').append(jQuery('<link rel="stylesheet" type="text/css" />').attr('href', data.css.url));
+      if (data.settings_css.code !== '' && (jQuery('head style[id="settings-css"]').length <= 0)) {
+        jQuery('head').append(jQuery('<style id="settings-css">' + window.atob(data.settings_css.code) + '</style>'));
+      }
+      if (data.custom_css.enabled && (jQuery('head style[id="custom-css"]').length <= 0))
+        jQuery('head').append(jQuery('<style id="custom-css">' + window.atob(data.custom_css.code) + '</style>'));
+    }
+  });
+}
+
+var hc_initialize_widgets = function (data, available_widgets) {
+  if (window.shopify_front_initialised) {
+    console.log("SHOPIFY FRONT INITIALISED");
+    // We came here that means front.js is called by another widget already.
+    // However, this doesn't mean that it's loaded. As it's loading asynchonously, we have to wait for it to get fully loaded otherwise hc_process_static_page() will not be available.
+    // So we check definition of HC_JS variable as a mean to check whether the front.js is loaded or not. HC_JS presence means it's loaded, otherwise we wait for 100ms and call the function again.
+    if (typeof HC_JS === 'undefined') {
+      setTimeout(function(){
+        hc_initialize_widgets(data, available_widgets);
+      }, 100);
+    } else {
+      hc_process_static_page(data.store_id, data.css.theme, available_widgets.join(','));
+    }
+  // If front.js is not called for initialisation, then call for it.
+  } else {
+    console.log(" ######### SHOPIFY INITIALISING FRONT  ######## ");
+    // Set the variable true which marks that the front.js call is made. So using the variable we can avoid calling it again for other widgets.
+    window.shopify_front_initialised = true;
+    hc_get_script_cached(data.js.url, function() {
+      hc_process_static_page(data.store_id, data.css.theme, available_widgets.join(','));
+    });
+  }
+}
+
+var hc_get_script_cached = function(url, callback){
+  jQuery.ajax({
+    type: "GET",
+    url: url,
+    success: callback,
+    dataType: "script",
+    cache: true
+  });
+}
+
+if (typeof jQuery == 'undefined' || (parseInt((jQuery.fn.jquery).split('.')[0]) <= 1 && parseInt((jQuery.fn.jquery).split('.')[1] || 0) < 6))
+  hc_load_jquery(jquery_url, function() { hc_fetch_resources(); });
+else
+  hc_fetch_resources();
