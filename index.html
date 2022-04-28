@@ -3997,7 +3997,7 @@
     ></iframe>
 
    
-    <div id="app-body" style="padding-top: 230px"> 
+    <div id="app-body" > 
 
        <!-- 
       
@@ -4029,7 +4029,25 @@
      -->
      <div class="first-div-container">
        <div class="firstdivhh">
-          <h1><strong>Sommaire</strong></h1>
+          <h1 class="sommaire-list-heading"><strong>Sommaire</strong></h1>  
+
+          <ul>  
+            <li class="sommaire-list"> Qu'est-ce que le CBD ?</li>
+            <li class="sommaire-list"> Les propriétés du CBD</li>
+            <li class="sommaire-list"> Quels sont les effets du CBD ? Est-ce que le CBD fait
+              planer ?</li>
+            <li class="sommaire-list"> Quel dosage consommer ?</li>
+            <li class="sommaire-list"> Combien de temps après la prise les effets se
+              ressentent-lis ?</li>
+            <li class="sommaire-list"> Les effets secondaires</li>
+            <li class="sommaire-list"> Broad Spectrum et Full Spectrum<br</li>
+            <li class="sommaire-list"> Les Terpènes</li>
+            <li class="sommaire-list"> L'effet d'entourage</li>
+            <li class="sommaire-list"> L'extraction au CO2</li>
+            <li class="sommaire-list"> Législation du CBD en France</li>
+          </ul>
+
+        <!--  
           <a
             href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-1"
             ><strong>1. Qu'est-ce que le CBD ?<br /></strong></a
@@ -4067,7 +4085,10 @@
           ><a
             href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-11"
             ><strong>11. Législation du CBD en France</strong></a
-          >
+          > 
+
+       --> 
+
         </div> 
        </div> 
 
@@ -4093,17 +4114,52 @@
               <style>
                 
                 #app-body{ display:relative;} 
-              /*Had to be properly aligned to the to main header*/  .hero-image-sommaire-menu{top:3vh}
-                #app-body-inner{ position: relative; background-color: rgba(255, 255, 0, 0);} 
+
+              /*Had to be properly aligned to the to main header*/  
+              .hero-image-sommaire-menu{top:3vh}
+                
+              #app-body-inner
+                { 
+                  position: relative; 
+                  background-color: rgba(255, 255, 0, 0);
+                  padding-top: 30vh;                
+                } 
+
                 .first-div-container{position:absolute; height:100%; margin-top:8vh;}
-                .hero-image-sommaire-menu{position:relative;}
+                .hero-image-sommaire-menu{
+                  position:relative; 
+                  transition: all .3s ease-in; 
+                  top:37vh;
+     
+                }
                 #content-wrap p {font-size:110%;}
                 #shopify-section-footer {position: relative;
                     z-index: 9999;background:white;}
                 h1.title { display:none; }
                 h1, h3 { color:#7c9b89; font-size:150%; }
                 .wide {top:-50px; max-width:100vw; width:100vw; position: relative; margin-left: -50vw; left: 50%;}
+                 
+                .sommaire-list
+                { 
+                  text-align: center;
+                  list-style: none;
+                  transition: all .1s ease-in;
+                } 
+                .sommaire-list:hover 
+                { 
+                  background-color: #7c9b89 ; 
+                  text-align: center;  
+                  color: #fff; 
+                  font-weight: 500;
+                  transition: all .3s ease-in;
+                }  
 
+                .sommaire-list-heading
+                { 
+                  text-align: center; 
+                }
+
+                
 
                 @media screen and (min-width: 1300px)
                 {
@@ -4117,17 +4173,39 @@
                 .firstdivhh {min-width:300px;  width:100%; font-size:158%; margin-bottom: 50px; left:5vw; }
               
                 }
+
                 @media screen and (max-width: 1127px)
                 {
                
                 .firstdivhh {min-width:260px;  width:100%; font-size:158%; margin-bottom: 50px; left:5vw; }
               
                 } 
+                @media screen and (max-width: 1122px)
+                {
+                  .wide 
+                  {
+                     visibility: hidden;
+                     height: 60vh;
+                  } 
+
+                  .hero-image-sommaire-menu
+                  { 
+                    top: 37vh;
+                    background: url("./Tout savoir sur le CBD _ CBD-Certified.com_files/Entete-TOUT-SAVOIR3_2048x2048.jpg") no-repeat center center;  
+               
+                  }
+                
+                } 
                 @media screen and (max-width: 940px)
                 {
                   /* This returns the sommaire div back in the html structure by having a relative position */
-                  .first-div-container{position:relative; height:100%; margin-top:2vh;
-                 } 
+                  .first-div-container{position:relative; height:100%; margin-top:2vh;}
+                  
+                    .sommaire-list
+                { 
+                  font-size: large;
+                }
+                  
                 }
                 @media screen and (min-width: 940px)
                 {
@@ -4150,13 +4228,102 @@
                */   position: sticky;
                     left:2vw;
                     font-size: 90%;
-                    top: 40vh;
-             /*This is to properly align the "firstdivhh" with the "seconddivhh" at the bottom*/       padding-bottom: 13vh;
-                 /*The index > 1*/   z-index: 2;
-                           }
+                    top: 36vh;
+               /*This is to properly align the "firstdivhh" with the "seconddivhh" at the bottom*/       
+                    padding-bottom: 42vh;
+               /*The index > 1*/   
+                    z-index: 2;
+                           
+                  }
 
                 .seconddivhh {width:73%; float:right; font-size:125%; }
+                }  
+
+                 
+                @media screen and (max-width: 1122px)
+                {
+                  .wide 
+                  {
+                     visibility: hidden;
+                     height: 60vh;
+                     width:600px;
+                  } 
+
+                  .hero-image-sommaire-menu
+                  { 
+                    top: 26vh;
+                    background: url("./Tout savoir sur le CBD _ CBD-Certified.com_files/Entete-TOUT-SAVOIR3_2048x2048.jpg") no-repeat center center;  
+                   
+                   
+                  } 
+
+                    #app-body-inner
+                  { 
+                    position: relative; 
+                    background-color:rgba(255, 255, 0, 0);
+                    padding-top: 30vh;                
+                  } 
+                
                 }
+
+                @media screen and (max-width: 700px)
+                {
+                  .app-body
+                  {
+                    padding: 0vh; 
+                    background-color: #0097a7;
+                  }
+
+                  .wide 
+                  {
+                     visibility: hidden;
+                     height: 40vh;
+                     width:600px; 
+                     background-color: #00a65a;
+                  } 
+
+                  .hero-image-sommaire-menu
+                  { 
+                    top: 26vh;
+                    background: url("./Tout savoir sur le CBD _ CBD-Certified.com_files/Entete-TOUT-SAVOIR3_2048x2048.jpg") no-repeat center center;  
+                    background-size: cover; 
+                    background-color: #00a65a;
+                   
+                  }
+                
+                }  
+
+                @media screen and (max-width: 640px)
+                {
+                          
+                  .hero-image-sommaire-menu
+                  { 
+                    top: 15vh;
+                   
+                  } 
+
+                  .firstdivhh {
+                   margin-top:-10vh;
+                  } 
+
+                }
+                @media screen and (max-width: 500px)
+                {
+                  .firstdivhh {
+                   margin-top:-14vh;
+                  } 
+
+                  .sommaire-list
+                { 
+                  font-size: medium;
+                }
+
+                }
+
+                
+                
+
+                
                 
               </style>
 
