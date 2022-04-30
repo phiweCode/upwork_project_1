@@ -162,10 +162,14 @@
       }
     </style>
 
+  
+
     <!-- starapps_scripts_start -->
     <!-- This code is automatically managed by StarApps Studio -->
     <!-- Please contact support@starapps.studio for any help -->
-
+            
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script
       type="text/javascript"
       async=""
@@ -4019,7 +4023,7 @@
 
         
 
-      <div id="app-body-inner"> 
+      <div id="app-body-inner">  
 
      <!-- 
        The "firstdivhh" must have its own parent to be independant from the landing image. This is because it responds 
@@ -4027,27 +4031,32 @@
        "first-div-container" must be position absolute. This is because if its not the "firstdivhh" takes up !00% width 
        and the "seconddivhh" is shifted below it. 
      -->
+
+
      <div class="first-div-container">
        <div class="firstdivhh">
           <h1 class="sommaire-list-heading"><strong>Sommaire</strong></h1>  
 
           <ul>  
-            <li class="sommaire-list"> Qu'est-ce que le CBD ?</li>
-            <li class="sommaire-list"> Les propriétés du CBD</li>
-            <li class="sommaire-list"> Quels sont les effets du CBD ? Est-ce que le CBD fait
-              planer ?</li>
-            <li class="sommaire-list"> Quel dosage consommer ?</li>
-            <li class="sommaire-list"> Combien de temps après la prise les effets se
-              ressentent-lis ?</li>
-            <li class="sommaire-list"> Les effets secondaires</li>
-            <li class="sommaire-list"> Broad Spectrum et Full Spectrum<br</li>
-            <li class="sommaire-list"> Les Terpènes</li>
-            <li class="sommaire-list"> L'effet d'entourage</li>
-            <li class="sommaire-list"> L'extraction au CO2</li>
-            <li class="sommaire-list"> Législation du CBD en France</li>
-          </ul>
 
-        <!--  
+            <li class="sommaire-list" > <a href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-1"> Qu'est-ce que le CBD </a> </li>
+            <li class="sommaire-list" > <a href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-2"> Les propriétés du CBD </a> </li>
+            <li class="sommaire-list" > <a href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-3"> Quels sont les effets du CBD ? Est-ce que le CBD fait
+              planer </a> </li>
+            <li class="sommaire-list" > <a href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-4"> Quel dosage consommer  </a> </li>
+            <li class="sommaire-list" > <a href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-5"> Combien de temps après la prise les effets se
+              ressentent-lis   </a> </li>
+            <li class="sommaire-list" > <a href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-6"> Les effets secondaires   </a> </li>
+            <li class="sommaire-list" > <a href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-7"> Broad Spectrum et Full Spectru  </a> </li>
+            <li class="sommaire-list" > <a href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-8"> Les Terpène </a> </li>
+            <li class="sommaire-list" > <a href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-9"> L'effet d'entourag </a></li>
+            <li class="sommaire-list "> <a href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-10"> L'extraction au CO  </a> </li>
+            <li class="sommaire-list "> <a href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-11"> Législation du CBD en France  </a> </li>
+
+        </ul>
+
+        <!-- 
+        <div>
           <a
             href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-1"
             ><strong>1. Qu'est-ce que le CBD ?<br /></strong></a
@@ -4086,8 +4095,10 @@
             href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-11"
             ><strong>11. Législation du CBD en France</strong></a
           > 
-
-       --> 
+     </div> 
+    -->
+      
+      
 
         </div> 
        </div> 
@@ -4100,7 +4111,7 @@
         >
           <section class="primary small-12 columns">
 
-            <main role="main">
+            <main id="sommaire_main" role="main">
               <header class="page-header">
                 <div class="">
                   <h1 class="title" data-default-text="Tout savoir sur le CBD">
@@ -4143,6 +4154,7 @@
                 { 
                   text-align: center;
                   list-style: none;
+                  cursor: pointer; 
                   transition: all .1s ease-in;
                 } 
                 .sommaire-list:hover 
@@ -4157,6 +4169,14 @@
                 .sommaire-list-heading
                 { 
                   text-align: center; 
+                } 
+
+                #sommaire_main
+                { 
+                  overflow: scroll;
+                  overflow-y: scroll;
+                  overflow-x: hidden; 
+                  height: 80vh;
                 }
 
                 
@@ -4330,7 +4350,7 @@
               <span id="sommairetoutsavoir"></span><span id="section-1"></span>
               
               <div class="seconddivhh">
-                <h3 style="margin-top: 6px">
+                <h3 class="sommaire-second-div" id="heading1" style="margin-top: 6px">
                   <strong>1. Qu'est-ce que le CBD ?</strong>
                 </h3>
                 <p>
@@ -4376,7 +4396,7 @@
                 </div>
                 <br />
                 <br />
-                <h3><strong>2. Les propriétés du CBD</strong></h3>
+                <h3 class="sommaire-second-div" id="heading2"><strong>2. Les propriétés du CBD</strong></h3>
                 <p>
                   Le CBD est une molécule active bénéficiant de nombreuses
                   propriétés intéressantes pour notre métabolisme, et il est
@@ -4419,7 +4439,7 @@
                 </div>
                 <br />
                 <br />
-                <h3>
+                <h3 class="sommaire-second-div" id="heading3">
                   <strong
                     >3. Quels sont les&nbsp;effets du CBD ? Est-ce que le CBD
                     fait planer ?</strong
@@ -4438,7 +4458,7 @@
                   légal dans toute l'Union Européenne.
                 </p>
                 <br />
-                <h3><strong>4. Quel dosage consommer ?</strong></h3>
+                <h3 class="sommaire-second-div" id="heading4"><strong>4. Quel dosage consommer ?</strong></h3>
                 <p>
                   Cela dépend de vos besoins, votre ressentie, votre
                   morphologie. Nous recommandons de respecter quelques principes
@@ -4462,7 +4482,7 @@
                   conseil&nbsp;auprès de votre médecin.
                 </p>
                 <br />
-                <h3>
+                <h3 class="sommaire-second-div" id="heading5">
                   <strong
                     >5. Combien de temps après la prise les effets se
                     ressentent-ils ?</strong
@@ -4485,7 +4505,7 @@
                   système digestif et moins rapidement que par vaporisation.
                 </p>
                 <br />
-                <h3><strong>6. Les&nbsp;effets secondaires</strong></h3>
+                <h3 class="sommaire-second-div" id="heading6"><strong>6. Les&nbsp;effets secondaires</strong></h3>
                 <p>
                   Les études évoquent également quelques effets secondaires
                   suite à la consommation de CBD, certes marginaux et légers
@@ -4501,7 +4521,7 @@
                   produits contenant du CBD.
                 </p>
                 <br />
-                <h3><strong>7. Broad Spectrum et Full Spectrum</strong></h3>
+                <h3 class="sommaire-second-div" id="heading7"><strong>7. Broad Spectrum et Full Spectrum</strong></h3>
                 <p>
                   Les termes Spectre large (Broad Spectrum) et Spectre complet
                   (Full Spectrum) représentent les différents cannabinoîdes
@@ -4538,7 +4558,7 @@
                   insignifiant de THC (inférieur à 0,2%).
                 </p>
                 <br />
-                <h3><strong>8. Les&nbsp;terpènes</strong></h3>
+                <h3 class="sommaire-second-div" id="heading8" ><strong>8. Les&nbsp;terpènes</strong></h3>
                 <p>
                   Les produits à base de cannabidiol sont en plein essor en
                   France et en Europe suite à sa récente légalisation. Parmi la
@@ -4665,7 +4685,7 @@
                 </div>
                 <br />
                 <br />
-                <h3><strong>9. L'effet d'entourage</strong></h3>
+                <h3 class="sommaire-second-div" id="heading9" ><strong>9. L'effet d'entourage</strong></h3>
                 <p>
                   L'effet d'entourage représente les interactions des différents
                   cannabinoïdes et terpènes présents dans le chanvre.<br />Les
@@ -4699,7 +4719,7 @@
                 </div>
                 <br />
                 <br />
-                <h3><strong>10. L'extraction au CO2</strong></h3>
+                <h3 class="sommaire-second-div" id="heading10" ><strong>10. L'extraction au CO2</strong></h3>
                 <p>
                   L'extraction au CO2 (dioxyde de carbone) consiste à utiliser
                   une température et une pression contrôlée pour créer des
@@ -4712,7 +4732,7 @@
                   plus sûr et globalement de meilleure qualité.
                 </p>
                 <br />
-                <h3><strong>11. Législation du CBD en France</strong></h3>
+                <h3 class="sommaire-second-div" id="heading11" ><strong>11. Législation du CBD en France</strong></h3>
                 <p>
                   La production, l'importation et la commercialisation de
                   chanvre&nbsp;sont autorisées en France et dans toute l'Union
