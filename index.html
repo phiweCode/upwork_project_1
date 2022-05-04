@@ -4037,7 +4037,7 @@
        <div class="firstdivhh">
           <h1 class="sommaire-list-heading"><strong>Sommaire</strong></h1>  
 
-          <ul>  
+          <ul class="sommair-list-container">  
 
             <li class="sommaire-list" > <a  class="sommaire-list" href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-1"> 1. Qu'est-ce que le CBD </a> </li>
             <li class="sommaire-list" > <a class="sommaire-list"  href="https://cbd-certified.com/pages/tout-savoir-sur-le-cbd#section-2"> 2. Les propriétés du CBD </a> </li>
@@ -4123,7 +4123,10 @@
               <div class="separator" aria-hidden="true"></div>
 
               <style>
-                
+                 
+                 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+
                 #app-body{ display:relative;} 
 
               /*Had to be properly aligned to the to main header*/  
@@ -4136,7 +4139,7 @@
                   padding-top: 30vh;                
                 } 
 
-                .first-div-container{position:absolute; height:100%; margin-top:8vh;}
+                .first-div-container{position:absolute; height:100%; margin-top:8vh;  }
                 .hero-image-sommaire-menu{
                   position:relative; 
                   transition: all .3s ease-in; 
@@ -4154,15 +4157,20 @@
                 { 
                   text-align: start;
                   list-style: none;
-                  cursor: pointer; 
+                  cursor: pointer;  
+                  font-family: 'Abel',sans-serif;
+                  font-size: 14px; 
+                
+                
                 
                 } 
                 .sommaire-list:hover
                 { 
-                  background-color: #7c9b89 ; 
+                  background-color: #7c9b89 ;  
+                  font-family: 'Abel',sans-serif;
                   text-align: start;  
                   color: #ffffff; 
-                  font-weight: 500;
+                  font-weight: 400;
                   transition: all .2s ease; 
                   width: 100%;
                 }  
@@ -4215,18 +4223,19 @@
                   
                     .sommaire-list
                 { 
-                  text-align: center;
-                  font-size: 42px;
+                  text-align: start;
+                  font-size: 30px; 
+                  font-family: 'Abel',sans-serif;
                 } 
 
                 .sommaire-list-heading
                 { 
-                  text-align: center; 
+                  text-align: start; 
                 }  
 
                 .sommaire-list:hover
                 {  
-                 text-align: center;
+                 text-align: start;
                 }
                   
                 }
@@ -4234,7 +4243,8 @@
                 {
                  
                 .firstdivhh {  width:100%; font-size:158%; margin-bottom: 50px; left:5vw; }
-                .seconddivhh {width:100%; font-size:150%; }
+                .seconddivhh {width:100%; font-size:150%; } 
+              
                 }
                 @media screen and (max-width: 380px)
                 {
@@ -4338,12 +4348,13 @@
 
                   .sommaire-list
                 { 
-                  font-size: 30px;
+                  font-size: 25px; 
+                  font-family: 'Abel',sans-serif;
                 } 
 
                 .sommaire-list:hover
                 {  
-                 text-align: center;
+                 text-align: start;
                 }
                   
 
